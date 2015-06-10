@@ -26,6 +26,9 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "sqlite3": "^3.0.8"
+    "moment": "^2.10.3",
+    "numeral": "^1.5.3",
+    "sqlite3": "^3.0.8",
+    "zeroclipboard": "^2.2.0"
   }
 }
