@@ -26,6 +26,8 @@
         <!--[if lte IE 8]>
             <link type="text/css" rel="stylesheet" href="css/smart-forms-ie8.css">
         <![endif]-->
+		
+		<script type='text/javascript' src='./js/knockout-latest.js'></script>
        
 </head>
 
@@ -35,7 +37,7 @@
         	<div class="smart-forms smart-container wrap-1">
             
               <div class="form-header header-primary header-black">
-                	<h4><i class="fa fa-new"></i>Add an Account</h4>
+                	<h4><i class="fa fa-new"></i>Add an Account <strong data-bind="text: accountFullName"></strong></h4>
               </div><!-- end .form-header section -->
                 
                 <form method="post" action="/" id="contact">
@@ -47,14 +49,14 @@
 						<div class="section colm colm9">
 							<label for="account-name" class="field-label">Account name</label>
 							<label class="field">
-								<input type="text" name="account-name" class="gui-input" placeholder="Enter account name">
+								<input type="text" data-bind="value: accountName" name="account-name" class="gui-input" placeholder="Enter account name">
 							</label>
 						</div><!-- end section -->
 						
 						<div class="section colm colm3">
 							<label for="account-code" class="field-label">Account code</label>
 							<label class="field">
-								<input type="text" name="account-code" class="gui-input" placeholder="Enter account code">
+								<input type="text" data-bind="value: accountCode" name="account-code" class="gui-input" placeholder="Enter account code">
 							</label>
 						</div><!-- end section -->
 					 </div> 
@@ -96,7 +98,7 @@
 						<div class="option-group field">
 						
 							<label class="switch">
-								<input type="checkbox" name="switch1" id="switch1" value="switch1">
+								<input type="checkbox" data-bind="checked: accountIsActive" name="switch1" id="switch1" value="switch1">
 								<span class="switch-label" data-on="ON" data-off="OFF"></span>
 								<span> Active </span>
 							</label>
@@ -127,4 +129,23 @@
             </div><!-- end .smart-forms section -->
         </div><!-- end .smart-wrap section -->
      
+	 
+	 
+	 <script type='text/javascript'>
+		// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+		function AppViewModel() {
+			this.accountName = ko.observable("Transport");
+			this.accountCode = ko.observable("EXP-TR");
+			this.accountIsActive = ko.observable(true);
+			this.accountFullName = ko.computed(function() {
+				return " - " + this.accountName() + " [" + this.accountCode() + "]";    
+			}, this);
+		}
+
+		// Activates knockout.js
+		ko.applyBindings(new AppViewModel());
+		console.log("was there");
+		
+	 </script>
+	 
     </body>
