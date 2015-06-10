@@ -1,23 +1,15 @@
 Cashbud
 =========
 
-A small library providing utility methods to `escape` and `unescape` HTML entities
+A small standalone web application to manage personal finances.
 
 ## Installation
 
-  npm install cashbud --save
+  npm install cashbud
 
 ## Usage
 
-  var cashbud = require('cashbud')
-      escape = cashbud.escape,
-      unescape = cashbud.unescape;
-
-  var html = '<h1>Hello World</h1>',
-      escaped = escape(html),
-      unescaped = unescape(escaped);
-
-  console.log('html', html, 'escaped', escaped, 'unescaped', unescaped);
+TBD
 
 ## Tests
 
@@ -25,13 +17,16 @@ A small library providing utility methods to `escape` and `unescape` HTML entiti
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style.
-Add unit tests for any new or changed functionality. Lint and test your code.
+TBD
 
 ## Useful Links
 * [http://kripken.github.io/sql.js/GUI/](http://kripken.github.io/sql.js/GUI/)
 * [https://github.com/kripken/sql.js](https://github.com/kripken/sql.js)
 * [https://github.com/mapbox/node-sqlite3](https://github.com/mapbox/node-sqlite3)
+
+## Roadmap
+
+* [See here](https://github.com/Elgolfin/CashBud/blob/master/Roadmap.md)
 
 ## Release History
 
