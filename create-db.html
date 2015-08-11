@@ -1,0 +1,89 @@
+<head>
+  
+        <title> Smart Forms - Form Title </title>
+        <meta charset="utf-8">
+        
+        <!-- Mobile meta -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Form styleshets -->
+        
+        <link rel="stylesheet" type="text/css"  href="./css/smart-forms.css">
+		<link rel="stylesheet" type="text/css"  href="./css/smart-themes/black.css">
+        <link rel="stylesheet" type="text/css"  href="./css/font-awesome.min.css">
+        
+        <!-- Placeholder support in IE9 and below -->
+        
+        <!--[if lte IE 9]>
+            <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>    
+            <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+            
+        <!-- IE8 Fallback styling -->
+        
+        <!--[if lte IE 8]>
+            <link type="text/css" rel="stylesheet" href="css/smart-forms-ie8.css">
+        <![endif]-->
+		
+		<script type='text/javascript' src='./js/knockout-latest.js'></script>
+       
+</head>
+
+    <body>
+     
+        <div class="smart-wrap theme-black">
+        	<div class="smart-forms smart-container wrap-1">
+            
+              <div class="form-header header-primary header-black">
+                	<h4><i class="fa fa-new"></i>Create a new database <strong data-bind="text: databaseName"></strong></h4>
+              </div><!-- end .form-header section -->
+                
+                <form method="post" action="/" id="contact">
+                	<div class="form-body">
+                    
+                     <!-- OUR FORM ELEMENTS WILL GO HERE -->                                                
+                    
+					<div class="frm-row">					
+						<div class="section colm colm12">
+							<label for="account-name" class="field-label">Database name</label>
+							<label class="field">
+								<input type="text" data-bind="value: databaseName" name="database-name" class="gui-input" placeholder="Enter database name">
+							</label>
+						</div><!-- end section -->
+						
+						
+					 </div>
+					 
+					 
+                    </div><!-- end .form-body section -->
+                    <div class="form-footer">
+                    	<button data-bind="click: createDatabase" type="submit" class="button btn-primary btn-black">Create Database</button>
+                    </div><!-- end .form-footer section -->
+                    
+                </form>
+                
+            </div><!-- end .smart-forms section -->
+        </div><!-- end .smart-wrap section -->
+     
+	 
+	 
+	 <script type='text/javascript'>
+            // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+		function AppViewModel() {
+			this.databaseName = ko.observable("");
+
+            // Operations
+            self.createDatabase = function() {
+                alert("cool");
+            }
+
+        }
+
+            // Activates knockout.js
+		ko.applyBindings(new AppViewModel());
+
+	 </script>
+	 
+    </body>
